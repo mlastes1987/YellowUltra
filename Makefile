@@ -1,5 +1,5 @@
 roms := \
-	pokeyellow.gbc \
+	YellowUltra.gbc \
 	pokeyellow_debug.gbc
 patches := \
 	pokeyellow.patch
@@ -16,7 +16,7 @@ rom_obj := \
 	gfx/sprites.o \
 	gfx/tilesets.o
 
-pokeyellow_obj       := $(rom_obj)
+YellowUltra_obj       := $(rom_obj)
 pokeyellow_debug_obj := $(rom_obj:.o=_debug.o)
 pokeyellow_vc_obj    := $(rom_obj:.o=_vc.o)
 
@@ -45,7 +45,7 @@ RGBLINK ?= $(RGBDS)rgblink
 .PHONY: all yellow yellow_debug clean tidy compare tools
 
 all: $(roms)
-yellow:       pokeyellow.gbc
+yellow:       YellowUltra.gbc
 yellow_debug: pokeyellow_debug.gbc
 yellow_vc:    pokeyellow.patch
 
@@ -68,7 +68,7 @@ tidy:
 	      $(patches:.patch=_vc.sym) \
 	      $(patches:.patch=_vc.map) \
 	      $(patches:%.patch=vc/%.constants.sym) \
-	      $(pokeyellow_obj) \
+	      $(YellowUltra_obj) \
 	      $(pokeyellow_vc_obj) \
 	      $(pokeyellow_debug_obj) \
 	      rgbdscheck.o
@@ -112,14 +112,14 @@ $1: $2 $$(shell tools/scan_includes $2) $(preinclude_deps) | rgbdscheck.o
 endef
 
 # Dependencies for objects
-$(foreach obj, $(pokeyellow_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
+$(foreach obj, $(YellowUltra_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
 $(foreach obj, $(pokeyellow_debug_obj), $(eval $(call DEP,$(obj),$(obj:_debug.o=.asm))))
 $(foreach obj, $(pokeyellow_vc_obj), $(eval $(call DEP,$(obj),$(obj:_vc.o=.asm))))
 
 endif
 
 
-pokeyellow_pad       = 0x00
+YellowUltra_pad       = 0x00
 pokeyellow_debug_pad = 0xff
 pokeyellow_vc_pad    = 0x00
 
