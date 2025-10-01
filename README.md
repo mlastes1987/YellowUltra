@@ -14,8 +14,6 @@ Currently the following features have been put into the hack:
 
 - **Exp. Share has been made Gen 6 Exp. All:** Experience has been made to more reflect Gen 6 with an EXP All that shares EXP points with the party for every battle.
 
-- **Item Sorting:** By pressing Start while in your bag you can sort your items instead of having to sort everything individually with Select.
-
 - **Mart Changes:** Rare Candies are now 50 Pokedollars and Master Balls are now free and sold in every Mart.
 
 - **Running Shoes:** Makes moving through Kanto with Pikachu even faster.  Great for speed runs.
