@@ -240,10 +240,12 @@ OverworldLoopLessDelay::
 	res BIT_TURNING, [hl]
 	xor a
 	ld [wPikachuCollisionCounter], a
+	jr nz, .normalPlayerSpriteAdvancement
 	call DoBikeSpeedup
 	call DoBikeSpeedup
 	call DoBikeSpeedup
 	jr .notRunning
+.normalPlayerSpriteAdvancement
 	; surf at 2x walking speed
 	ld a, [wWalkBikeSurfState]
 	cp $02
